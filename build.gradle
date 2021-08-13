@@ -1,0 +1,46 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "2.0.3"
+}
+
+version = "0.1"
+group = "org.jobrunr.examples"
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("org.jobrunr.examples.*")
+    }
+}
+
+dependencies {
+    implementation 'io.micronaut:micronaut-http-client'
+    implementation 'io.micronaut:micronaut-runtime'
+    implementation 'io.micronaut:micronaut-management'
+    implementation 'io.micronaut.micrometer:micronaut-micrometer-core'
+    implementation 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
+
+    runtimeOnly 'ch.qos.logback:logback-classic'
+    compileOnly 'org.graalvm.nativeimage:svm'
+
+    implementation 'io.micronaut:micronaut-validation'
+}
+
+
+application {
+    mainClass.set("org.jobrunr.examples.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("1.8")
+    targetCompatibility = JavaVersion.toVersion("1.8")
+}
+
+
+

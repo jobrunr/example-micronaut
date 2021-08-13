@@ -1,0 +1,31 @@
+micronaut:
+  application:
+    name: example-jobrunr-micronaut
+  metrics:
+    enabled: true
+
+#mongodb:
+#  servers.*.uuid-representation: STANDARD
+#  uri: mongodb://127.0.0.1:27017/jobrunr
+
+#redis:
+#  uri: redis://localhost
+
+elasticsearch:
+  httpHosts: http://127.0.0.1:9200
+
+jobrunr:
+  job-scheduler:
+    enabled: true
+  background-job-server:
+    enabled: true
+  dashboard:
+    enabled: true
+
+endpoints:
+  health:
+    enabled: true
+    details-visible: anonymous
+  metrics:
+    enabled: true
+    sensitive: false
