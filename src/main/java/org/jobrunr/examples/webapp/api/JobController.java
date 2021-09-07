@@ -11,7 +11,7 @@ import org.jobrunr.jobs.JobId;
 import org.jobrunr.jobs.context.JobContext;
 import org.jobrunr.scheduling.JobScheduler;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 @Controller("/jobs")
 public class JobController {

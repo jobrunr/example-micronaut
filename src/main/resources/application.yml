@@ -4,6 +4,11 @@ micronaut:
   metrics:
     enabled: true
 
+datasources:
+  default:
+    url: jdbc:h2:file:/tmp/default
+    driverClassName: org.h2.Driver
+
 #mongodb:
 #  servers.*.uuid-representation: STANDARD
 #  uri: mongodb://127.0.0.1:27017/jobrunr
@@ -11,8 +16,8 @@ micronaut:
 #redis:
 #  uri: redis://localhost
 
-elasticsearch:
-  httpHosts: http://127.0.0.1:9200
+#elasticsearch:
+#  httpHosts: http://127.0.0.1:9200
 
 jobrunr:
   job-scheduler:
@@ -29,3 +34,6 @@ endpoints:
   metrics:
     enabled: true
     sensitive: false
+
+myjob:
+  cron: "*/15 * * * *"
