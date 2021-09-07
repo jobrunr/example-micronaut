@@ -37,29 +37,29 @@ public class JobController {
 
     @Get("/simple-job")
     @Produces(MediaType.TEXT_PLAIN)
-    public String simpleJob(@QueryValue(value = "name", defaultValue = "World") String name) {
-        final JobId enqueuedJobId = jobScheduler.<MyService>enqueue(myService -> myService.doSimpleJob("Hello " + name));
+    public String simpleJob(@QueryValue(value = "value", defaultValue = "Hello world") String value) {
+        final JobId enqueuedJobId = jobScheduler.<MyService>enqueue(myService -> myService.doSimpleJob(value));
         return "Job Enqueued: " + enqueuedJobId;
     }
 
     @Get("/simple-job-instance")
     @Produces(MediaType.TEXT_PLAIN)
-    public String simpleJobUsingInstance(@QueryValue(value = "name", defaultValue = "World") String name) {
-        final JobId enqueuedJobId = jobScheduler.enqueue(() -> myService.doSimpleJob("Hello " + name));
+    public String simpleJobUsingInstance(@QueryValue(value = "value", defaultValue = "Hello world") String value) {
+        final JobId enqueuedJobId = jobScheduler.enqueue(() -> myService.doSimpleJob(value));
         return "Job Enqueued: " + enqueuedJobId;
     }
 
     @Get("/long-running-job")
     @Produces(MediaType.TEXT_PLAIN)
-    public String longRunningJob(@QueryValue(value = "name", defaultValue = "World") String name) {
-        final JobId enqueuedJobId = jobScheduler.<MyService>enqueue(myService -> myService.doLongRunningJob("Hello " + name));
+    public String longRunningJob(@QueryValue(value = "value", defaultValue = "Hello world") String value) {
+        final JobId enqueuedJobId = jobScheduler.<MyService>enqueue(myService -> myService.doLongRunningJob(value));
         return "Job Enqueued: " + enqueuedJobId;
     }
 
     @Get("/long-running-job-with-job-context")
     @Produces(MediaType.TEXT_PLAIN)
-    public String longRunningJobWithJobContext(@QueryValue(value = "name", defaultValue = "World") String name) {
-        final JobId enqueuedJobId = jobScheduler.<MyService>enqueue(myService -> myService.doLongRunningJobWithJobContext("Hello " + name, JobContext.Null));
+    public String longRunningJobWithJobContext(@QueryValue(value = "value", defaultValue = "Hello world") String value) {
+        final JobId enqueuedJobId = jobScheduler.<MyService>enqueue(myService -> myService.doLongRunningJobWithJobContext(value, JobContext.Null));
         return "Job Enqueued: " + enqueuedJobId;
     }
 }
