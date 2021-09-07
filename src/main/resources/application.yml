@@ -4,10 +4,10 @@ micronaut:
   metrics:
     enabled: true
 
-datasources:
-  default:
-    url: jdbc:h2:file:/tmp/default
-    driverClassName: org.h2.Driver
+#datasources:
+#  default:
+#    url: jdbc:h2:file:/tmp/default
+#    driverClassName: org.h2.Driver
 
 #mongodb:
 #  servers.*.uuid-representation: STANDARD

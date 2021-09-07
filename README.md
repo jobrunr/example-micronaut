@@ -30,7 +30,7 @@ This project has the following packages:
 - Run the Maven plugin `./gradlew run` and wait for Micronaut to be up & running
 - Open your favorite browser:
     - Navigate to the JobRunr dashboard located at http://localhost:8000/dashboard.
-    - Navigate to the JobController at [http://localhost:8080/jobs] to enqueue jobs
+    - Navigate to the JobController at [http://localhost:8080/jobs/] to enqueue jobs
     - Visit the dashboard again and see the jobs being processed!
 
 > Note: Running micronaut apps with JobRunr using GraalVM native mode is not yet supported.
