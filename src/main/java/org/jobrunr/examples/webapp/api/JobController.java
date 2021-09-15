@@ -54,7 +54,7 @@ public class JobController {
         return "Job Enqueued: " + enqueuedJobId;
     }
 
-    @Get("/schedule-example-job")
+    @Get("/schedule-simple-job")
     @Produces(MediaType.TEXT_PLAIN)
     public String scheduleSimpleJob(
             @QueryValue(value = "value", defaultValue = "Hello world") String value,
