@@ -33,7 +33,7 @@ public class JobController {
                 "You can:<br />" +
                 "- <a href=\"/jobs/simple-job\">Enqueue a simple job</a><br />" +
                 "- <a href=\"/jobs/simple-job-instance\">Enqueue a simple job using a service instance</a><br />" +
-                "- <a href=\"/jobs/schedule-example-job\">Schedule a simple job 3 hours from now using a service instance</a><br />" +
+                "- <a href=\"/jobs/schedule-simple-job\">Schedule a simple job 3 hours from now using a service instance</a><br />" +
                 "- <a href=\"/jobs/long-running-job\">Enqueue a long-running job</a><br />" +
                 "- <a href=\"/jobs/long-running-job-with-job-context\">Enqueue a long-running job using a JobContext to log progress</a><br />" +
                 "- Learn more on <a href=\"https://www.jobrunr.io/\">www.jobrunr.io</a><br />"
