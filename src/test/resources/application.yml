@@ -1,0 +1,7 @@
+jobrunr:
+  background-job-server:
+    enabled: true
+  dashboard:
+    enabled: true
+  job-scheduler:
+    enabled: true
