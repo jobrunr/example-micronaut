@@ -27,7 +27,10 @@ This project has the following packages:
 
 ## How to run this project:
 - clone the project and open it in your favorite IDE that supports Maven
+- Set the environment variable `JOBRUNR_JOBS` to `true` if you want to run the jobs (by default it's false)
+  - You can also just update `application.yml` to by pass the requirement for an env var
 - Run the Maven plugin `./gradlew run` and wait for Micronaut to be up & running
+  - Or run [Application](src/main/java/org/jobrunr/examples/Application.java)
 - Open your favorite browser:
     - Navigate to the JobRunr dashboard located at http://localhost:8000/dashboard.
     - Navigate to the JobController at http://localhost:8080/jobs/ to enqueue jobs
