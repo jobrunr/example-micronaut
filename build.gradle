@@ -1,6 +1,6 @@
 plugins {
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.micronaut.application") version "4.1.2"
+    id("com.gradleup.shadow") version "8.3.3"
+    id("io.micronaut.application") version "4.4.3"
 }
 
 version = "0.1"
@@ -12,7 +12,7 @@ repositories {
 }
 
 micronaut {
-    version '4.1.6'
+    version '4.4.3'
     runtime("netty")
     testRuntime("junit5")
     processing {
@@ -27,7 +27,7 @@ dependencies {
     implementation 'io.micronaut:micronaut-management'
     implementation 'com.h2database:h2'
     implementation 'io.micronaut:micronaut-jackson-databind'
-    implementation 'org.jobrunr:jobrunr-micronaut-feature:7.2.0'
+    implementation 'org.jobrunr:jobrunr-micronaut-feature:7.3.0'
 
     runtimeOnly "io.micronaut.sql:micronaut-jdbc-hikari"
     implementation 'io.micronaut.data:micronaut-data-tx'
@@ -47,6 +47,6 @@ application {
     mainClass.set("org.jobrunr.examples.Application")
 }
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
