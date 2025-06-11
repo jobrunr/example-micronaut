@@ -1,6 +1,6 @@
 plugins {
     id("com.gradleup.shadow") version "8.3.3"
-    id("io.micronaut.application") version "4.4.3"
+    id("io.micronaut.application") version "4.5.3"
 }
 
 version = "0.1"
@@ -12,22 +12,26 @@ repositories {
 }
 
 micronaut {
-    version '4.4.3'
+    version '4.8.2'
     runtime("netty")
     testRuntime("junit5")
     processing {
-        incremental(true)
-        annotations("org.jobrunr.examples.*")
+        incremental(false)
+        annotations("org.jobrunr.examples.*", "org.jobrunr.micronaut.*")
     }
 }
 
 dependencies {
+    compileOnly 'io.micronaut:micronaut-inject-java:4.8.2'
+    annotationProcessor 'io.micronaut:micronaut-inject-java:4.8.2'
+    annotationProcessor 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
+
     implementation 'io.micronaut:micronaut-http-client'
     implementation 'io.micronaut:micronaut-runtime'
     implementation 'io.micronaut:micronaut-management'
     implementation 'com.h2database:h2'
     implementation 'io.micronaut:micronaut-jackson-databind'
-    implementation 'org.jobrunr:jobrunr-micronaut-feature:7.3.0'
+    implementation 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
 
     runtimeOnly "io.micronaut.sql:micronaut-jdbc-hikari"
     implementation 'io.micronaut.data:micronaut-data-tx'
