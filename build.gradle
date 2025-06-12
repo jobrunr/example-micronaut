@@ -22,16 +22,14 @@ micronaut {
 }
 
 dependencies {
-    compileOnly 'io.micronaut:micronaut-inject-java:4.8.2'
-    annotationProcessor 'io.micronaut:micronaut-inject-java:4.8.2'
     annotationProcessor 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
+    implementation 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
 
     implementation 'io.micronaut:micronaut-http-client'
     implementation 'io.micronaut:micronaut-runtime'
     implementation 'io.micronaut:micronaut-management'
     implementation 'com.h2database:h2'
     implementation 'io.micronaut:micronaut-jackson-databind'
-    implementation 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
 
     runtimeOnly "io.micronaut.sql:micronaut-jdbc-hikari"
     implementation 'io.micronaut.data:micronaut-data-tx'
