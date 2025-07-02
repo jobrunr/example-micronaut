@@ -15,30 +15,39 @@ micronaut {
     version '4.8.2'
     runtime("netty")
     testRuntime("junit5")
-    processing {
-        incremental(false)
-        annotations("org.jobrunr.examples.*", "org.jobrunr.micronaut.*")
+}
+
+tasks.withType(JavaCompile).configureEach {
+    doFirst {
+        println "compilerArgs: " + options.compilerArgs
+        //println "annotationProcessorPath: " + options.annotationProcessorPath.files
     }
+    options.compilerArgs += [
+            "-XprintRounds",
+            "-XprintProcessorInfo"
+    ]
 }
 
 dependencies {
-    annotationProcessor 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
+    annotationProcessor 'io.micronaut:micronaut-inject-java'
+    annotationProcessor 'org.jobrunr:jobrunr-micronaut-annotations:1.0.0-SNAPSHOT'
+
     implementation 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
 
     implementation 'io.micronaut:micronaut-http-client'
     implementation 'io.micronaut:micronaut-runtime'
     implementation 'io.micronaut:micronaut-management'
-    implementation 'com.h2database:h2'
     implementation 'io.micronaut:micronaut-jackson-databind'
-
-    runtimeOnly "io.micronaut.sql:micronaut-jdbc-hikari"
+    implementation 'io.micronaut.validation:micronaut-validation'
     implementation 'io.micronaut.data:micronaut-data-tx'
 
+    implementation 'com.h2database:h2'
+
+    runtimeOnly "io.micronaut.sql:micronaut-jdbc-hikari"
     runtimeOnly 'org.yaml:snakeyaml'
     runtimeOnly 'ch.qos.logback:logback-classic'
-    compileOnly 'org.graalvm.nativeimage:svm'
 
-    implementation 'io.micronaut.validation:micronaut-validation'
+    compileOnly 'org.graalvm.nativeimage:svm'
 
     testImplementation 'org.awaitility:awaitility'
     testImplementation 'org.assertj:assertj-core'
