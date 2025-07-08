@@ -5,3 +5,9 @@ jobrunr:
     enabled: true
   job-scheduler:
     enabled: true
+
+
+datasources:
+  default:
+    url: jdbc:h2:file:/tmp/default
+    driverClassName: org.h2.Driver

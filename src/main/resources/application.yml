@@ -21,7 +21,7 @@ datasources:
 
 jobrunr:
   background-job-server:
-    enabled: ${JOBRUNR_JOBS:false}
+    enabled: true
   dashboard:
     enabled: true
   job-scheduler:

@@ -43,7 +43,7 @@ public class MyService implements MyServiceInterface {
                 LOGGER.info(String.format("Processing item %d: %s", i, anArgument));
                 System.out.println(String.format("Doing work item %d: %s", i, anArgument));
                 Thread.sleep(15000);
-                progressBar.increaseByOne();
+                progressBar.incrementSucceeded();
             }
             LOGGER.warn("Finished long running job...");
         } catch (InterruptedException e) {
