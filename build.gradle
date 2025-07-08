@@ -30,9 +30,9 @@ tasks.withType(JavaCompile).configureEach {
 
 dependencies {
     annotationProcessor 'io.micronaut:micronaut-inject-java'
-    annotationProcessor 'org.jobrunr:jobrunr-micronaut-annotations:1.0.0-SNAPSHOT'
+    annotationProcessor 'org.jobrunr:jobrunr-micronaut-annotations:8.0.0'
 
-    implementation 'org.jobrunr:jobrunr-micronaut-feature:1.0.0-SNAPSHOT'
+    implementation 'org.jobrunr:jobrunr-micronaut-feature:8.0.0'
 
     implementation 'io.micronaut:micronaut-http-client'
     implementation 'io.micronaut:micronaut-runtime'
