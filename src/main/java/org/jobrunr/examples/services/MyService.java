@@ -27,7 +27,7 @@ public class MyService implements MyServiceInterface {
     public void doLongRunningJob(String anArgument) {
         try {
             for (int i = 0; i < 10; i++) {
-                System.out.println(String.format("Doing work item %d: %s", i, anArgument));
+                System.out.printf("Doing work item %d: %s%n", i, anArgument);
                 Thread.sleep(20000);
             }
         } catch (InterruptedException e) {
